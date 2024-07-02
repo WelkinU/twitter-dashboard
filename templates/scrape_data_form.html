@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %} <title>Scrape Data</title> {% endblock %}
+
+{% block content %}
+
+<form action="/scrape_follower_profiles/" method="post">
+  <h2>Get Follower Profiles</h2>
+  <label for="username"><b>@username to scrape followers of: </b></label><br>
+  <input type="text" id="username" name="username" {% if MAIN_ACCOUNT_USERNAME %} value='{{ MAIN_ACCOUNT_USERNAME}}' {% endif %}><br><br>
+
+  <label for="profile_pages"><b>Number of pages of followers to fetch (50-60 users per page)</b></label><br>
+  <input type="number" id="profile_pages" name="profile_pages" min="1" value = '10'>
+
+  <br><br>
+
+  <input type="submit" value="Submit">
+
+</form>
+
+<hr>
+
+<h2> Flag Users </h2>
+<form action="/run_flags/" method="post">
+  <b>Run flags configured in <em>config.py</em> on followers from the above web form. After running this, go back to the follower dashboard and flagged followers will be highlighted in red.</b>
+
+  <br>
+
+  <input type="submit" value="Submit">
+
+</form>
+
+<hr>
+
+<h2>Scrape User Followings for Making Network Graphs </h2>
+<form action="/scrape_follower_followings/" method="post">
+
+  <label for="pages"> <b>For each follower scraped, number of pages to fetch of who they follow (50-60 users per page). WARNING: long very runtime, can be hours because of rate limits, see command prompt for progress </b> </label> <br>
+  <input type="number" id="pages" name="pages" min="1" value='10'> 
+
+  <br><br>
+
+  <input type="submit" value="Submit">
+</form>
+
+{% endblock %}

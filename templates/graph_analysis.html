@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %} <title>Graph Analysis</title> {% endblock %}
+
+{% block header %}
+<!-- Load plotly.js library via CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.33.0/plotly.min.js" integrity="sha512-kG/veDBO4Av/ffjTdtEvtsUkVgAisp5MWbymAUc5vJlyZb3WSZ+gEC8cNlAACBzaHQQLTUKqRaNIKeIc44yD6w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endblock %}
+
+
+{% block content %}
+
+<!-- Insert the python plotly html export -->
+{{ html | safe }}
+
+{% endblock %}
