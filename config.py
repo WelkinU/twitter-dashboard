@@ -18,7 +18,7 @@ MAIN_ACCOUNT_PASSWORD = ''
 #--------------------------------------------------------------------------------
 
 # capitalization doesn't matter
-TEXT_TO_FLAG = ['whatsapp', 'he/him', 'they/them', 'she/her']
+TEXT_TO_FLAG = ['whatsapp', r'% return', 'he/him', 'they/them', 'she/her']
 
 # see full list of emoji for python emoji library: https://carpedm20.github.io/emoji/
 # capitalization matters here
